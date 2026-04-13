@@ -12,7 +12,7 @@ export const Task = ({ task }: TaskProps) => {
     const [editText, setEditText] = useState<string>(task.title)
     const dispatch = useAppDispatch()
 
-    const hendelSend = (e) => {
+    const hendelSend = (e:React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             if (editText.trim() === '') {
                 setEditText(task.title)

@@ -13,7 +13,8 @@ export const getTasks = createAsyncThunk('task/get', async (_, thunkAPI) => {
       }
         })
            return response.data 
-    } catch (error) {
+    } catch (e) {
+        const error = e as { message: string }
         return thunkAPI.rejectWithValue(error.message)
     }
 })
@@ -26,7 +27,8 @@ export const addTask = createAsyncThunk('task/add', async (title:string, thunkAP
             }
         })
            return response.data 
-    } catch (error) {
+    } catch (e) {
+        const error = e as { message: string }
         return thunkAPI.rejectWithValue(error.message)
     }
 })
@@ -39,7 +41,8 @@ export const removeTask = createAsyncThunk('task/delete', async (id:string, thun
       }
         })
            return response.data 
-    } catch (error) {
+    } catch (e) {
+        const error = e as { message: string }
         return thunkAPI.rejectWithValue(error.message)
     }
 })
@@ -53,7 +56,8 @@ export const checkTask = createAsyncThunk('task/check', async (id:string, thunkA
       }
         })
            return response.data 
-    } catch (error) {
+    } catch (e) {
+        const error = e as { message: string }
         return thunkAPI.rejectWithValue(error.message)
     }
 })
@@ -72,7 +76,8 @@ export const editTask = createAsyncThunk('task/edit', async ({ id, newTitle }:Ed
             }
         })
         return response.data 
-    } catch (error) {
+    } catch (e) {
+        const error = e as { message: string }
         return thunkAPI.rejectWithValue(error.message)
     }
 })
@@ -85,7 +90,8 @@ export const clearTask = createAsyncThunk('task/clear', async (id: string, thunk
             }
         })
         return response.data 
-    } catch (error) {
+    } catch (e) {
+        const error = e as { message: string }
         return thunkAPI.rejectWithValue(error.message)
     }
 })

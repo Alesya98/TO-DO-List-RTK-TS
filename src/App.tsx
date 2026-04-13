@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import { RegistrationPage } from './pages/RegistrationPage'
 import { LoginPage } from './pages/LoginPage'
-import { ToDo } from './pages/Todo'
 import { PrivateRouter } from './components/PrivateRouter'
+import { ToDo } from './pages/ToDo'
 
 function App() {
   

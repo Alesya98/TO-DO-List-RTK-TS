@@ -7,7 +7,8 @@ export const registration = async (data:InitialValueType) => {
         return response.data
     }
     
-    catch (error) {
+    catch (e) {
+        const error = e as { message: string }
         console.log('Ошибка сервера >>>', error.message)
     }
 }

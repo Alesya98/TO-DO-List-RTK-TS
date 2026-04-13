@@ -30,8 +30,9 @@ export const LoginPage:React.FC = () => {
             const data = await loginUser(dataLogin)
              localStorage.setItem('token', data.token)
             navigate('/home')
-        } catch (error) {
-            console.log('Ошибка, такого пользователя нету >>>', error.response)
+        } catch (e) {
+            const error = e as { message: string }
+            console.log('Ошибка, такого пользователя нету >>>', error.message)
             navigate('/registration')
         }
         
